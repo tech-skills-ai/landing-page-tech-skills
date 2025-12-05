@@ -7,6 +7,8 @@ import { Menu, X } from "lucide-react"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const whatsappLink = "https://wa.me/5511937249788"
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,10 +38,16 @@ export function Header() {
             </a>
           </nav>
 
+          {/* Botão desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground hover:bg-primary/90 px-4 h-10 text-sm rounded-lg transition-colors"
+            >
               Falar com Especialista
-            </Button>
+            </a>
           </div>
 
           <button className="md:hidden text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -63,9 +71,16 @@ export function Header() {
             <a href="#como-funciona" className="text-muted-foreground hover:text-foreground transition-colors">
               Como Funciona
             </a>
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+
+            {/* Botão mobile */}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground hover:bg-primary/90 px-4 h-10 text-sm rounded-lg transition-colors"
+            >
               Falar com Especialista
-            </Button>
+            </a>
           </nav>
         </div>
       )}

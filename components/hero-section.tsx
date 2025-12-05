@@ -21,20 +21,26 @@ export function HeroSection() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base">
-              Solicitar Demo
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-border text-foreground hover:bg-secondary px-8 h-12 text-base bg-transparent"
-            >
-              Ver em Ação
-            </Button>
-          </div>
-        </div>
+          {/* Botão para WhatsApp */}
+          <a
+            href="https://wa.me/5511937249788" // substitua pelo seu número com DDI
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base rounded-lg transition-colors"
+          >
+            Solicitar Demo
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </a>
 
+          {/* Botão para rolar até #demo */}
+          <a
+            href="#demo"
+            className="inline-flex items-center justify-center border border-border text-foreground hover:bg-secondary px-8 h-12 text-base bg-transparent rounded-lg transition-colors"
+          >
+            Ver em Ação
+          </a>
+        </div>
+        </div>
         <div className="mt-20 relative">
           <div className="absolute inset-0 bg-primary/5 rounded-3xl blur-3xl" />
           <div className="relative bg-card border border-border rounded-2xl p-4 sm:p-8">

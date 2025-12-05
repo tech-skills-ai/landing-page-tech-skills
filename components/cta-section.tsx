@@ -12,12 +12,19 @@ export function CTASection() {
               Pronto para revolucionar seu recrutamento?
             </h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Junte-se às empresas que já estão economizando tempo e encontrando talentos melhores com o Tech Skills.
+              Economize tempo e encontre os melhores talentos com a Tech Skills.
               Agende uma demonstração gratuita.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base">
-                Falar com Especialista
+                <a
+                  href="https://wa.me/5511937249788"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-primary text-primary-foreground hover:bg-primary/90 px-4 h-10 text-sm rounded-lg transition-colors"
+                >
+                  Falar com Especialista
+                </a>
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>

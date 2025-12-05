@@ -1,10 +1,18 @@
 "use client"
 
-import { Play } from "lucide-react"
-import { useState } from "react"
+import { useRef, useEffect } from "react"
 
 export function VideoSection() {
-  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.play().catch(() => {
+        // autoplay falhou
+      })
+    }
+  }, [])
 
   return (
     <section id="demo" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -19,33 +27,16 @@ export function VideoSection() {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
-          <div className="relative aspect-video bg-card border border-border rounded-2xl overflow-hidden">
-            {!isPlaying ? (
-              <div className="absolute inset-0 flex items-center justify-center bg-secondary/50">
-                <div className="text-center">
-                  <button
-                    onClick={() => setIsPlaying(true)}
-                    className="w-20 h-20 bg-primary rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors group"
-                  >
-                    <Play className="w-8 h-8 text-primary-foreground ml-1 group-hover:scale-110 transition-transform" />
-                  </button>
-                  <p className="mt-4 text-muted-foreground text-sm">Clique para assistir a demonstração</p>
-                </div>
-              </div>
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center bg-secondary">
-                <p className="text-muted-foreground">Seu vídeo de demonstração será exibido aqui</p>
-                {/* Substitua pelo seu vídeo:
-                <video 
-                  src="/seu-video.mp4" 
-                  controls 
-                  autoPlay 
-                  className="w-full h-full object-cover"
-                /> 
-                */}
-              </div>
-            )}
+          <div className="relative aspect-video overflow-hidden bg-transparent">
+            <video
+              ref={videoRef}
+              src="/demo-tech-skills.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
       </div>
