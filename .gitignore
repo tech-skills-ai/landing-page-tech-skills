@@ -1,5 +1,7 @@
 .qodo
 node_modules
+.next
+out
 dist
 build
 .env
