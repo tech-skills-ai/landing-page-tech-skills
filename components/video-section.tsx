@@ -30,7 +30,7 @@ export function VideoSection() {
           <div className="relative aspect-video overflow-hidden bg-transparent">
             <video
               ref={videoRef}
-              src="/demo-tech-skills.mp4"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/demo-tech-skills.mp4`}
               autoPlay
               loop
               muted
